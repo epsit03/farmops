@@ -1,0 +1,57 @@
+.village-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.village-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.budget-display {
+  background-color: #e0f7fa;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  color: #006064;
+}
+
+.village-map {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.development-summary {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+h1, h2 {
+  color: #00796b;
+}
+
+h2 {
+  margin-top: 20px;
+}
