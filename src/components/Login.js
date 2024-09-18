@@ -1,11 +1,11 @@
+
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { TextField, Button, Select, MenuItem, Box, Typography } from "@mui/material";
 import Loader from './Loader';
 import * as THREE from 'three';
 
-
-const Login = () => {
+const Login = ({ setUserRole }) => {
   const [loading, setLoading] = useState(true);
   const [role, setRole] = useState("");
   const [username, setUsername] = useState("");
@@ -44,7 +44,7 @@ const Login = () => {
 
   const handleLogin = () => {
     if (username && password && role) {
-      // Redirect to landing page
+      setUserRole(role); // Pass the selected role back to App.js
       navigate("/landing");
     }
   };
@@ -55,27 +55,20 @@ const Login = () => {
 
   return (
     <div className="flex justify-center items-center h-screen relative bg-gradient-to-r from-blue-500 to-purple-500">
-     
       <Box className="z-10 p-8 bg-white rounded-lg shadow-lg">
-        
         <Typography variant="h4" className="text-blue-600 mb-4">Gram Panchayat Login</Typography>
         <TextField fullWidth label="Username" value={username} onChange={(e) => setUsername(e.target.value)} margin="normal" />
         <TextField fullWidth label="Password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} margin="normal" />
         <Select fullWidth value={role} onChange={(e) => setRole(e.target.value)} displayEmpty className="mt-4">
           <MenuItem value="" disabled>Select Role</MenuItem>
-          <MenuItem value="sarpanch">Sarpanch (Super Admin)</MenuItem>
+          <MenuItem value="super-admin">Sarpanch (Super Admin)</MenuItem>
           <MenuItem value="committee">Committee Member</MenuItem>
           <MenuItem value="user">Normal User</MenuItem>
         </Select>
-        <Button
-          fullWidth
-          className="mt-4 bg-blue-600 text-white hover:bg-blue-700"
-          onClick={handleLogin}
-        >
+        <Button fullWidth className="mt-4 bg-blue-600 text-white hover:bg-blue-700" onClick={handleLogin}>
           Login
         </Button>
       </Box>
-      
     </div>
   );
 };
